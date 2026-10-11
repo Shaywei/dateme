@@ -336,8 +336,8 @@ mark.todo {
 .about-grid p { font-size: 0.98em; }
 
 /* ---------- photos ---------- */
-/* Tile heights are computed from the gallery's own width (container units), so a tile that spans
-   two columns ends on the same baseline as the single-column tiles beside it. */
+/* Tile heights are computed from the gallery's own width (container units), so every tile in a
+   row ends on the same baseline whatever the source photo's shape. */
 .gallery {
   --gap: 0.9rem;
   display: grid;
@@ -345,7 +345,7 @@ mark.todo {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   container-type: inline-size;
 }
-@media (min-width: 900px) { .gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 720px) { .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .gallery figure { margin: 0; min-width: 0; }
 .gallery a { display: block; border-radius: var(--radius); overflow: hidden; background: var(--surface); }
 .gallery img {
@@ -355,13 +355,12 @@ mark.todo {
   object-fit: cover;
   transition: transform 400ms ease;
 }
-@media (min-width: 900px) { .gallery img { height: calc((100cqw - 3 * var(--gap)) / 3); } }
+@media (min-width: 720px) { .gallery img { height: calc((100cqw - 2 * var(--gap)) * 4 / 9); } }
 .gallery figure.wide { grid-column: 1 / -1; }
 .gallery figure.wide img { height: auto; aspect-ratio: 3 / 2; }
 @media (max-width: 719px) { .gallery figure.wide img { aspect-ratio: 4 / 3; } }
-.gallery figure.wide-2 { grid-column: span 2; }
 .gallery img.focus-right { object-position: 58% 50%; }
-.gallery img.focus-low { object-position: 50% 62%; }
+.gallery img.focus-left { object-position: 28% 50%; }
 .gallery a:hover img { transform: scale(1.015); }
 .gallery figcaption {
   font-family: var(--mono);
@@ -370,13 +369,8 @@ mark.todo {
   margin-top: 0.5rem;
   line-height: 1.4;
 }
-/* Flerpsy's row: three equal tiles on wide screens; on phones two up top and the close-up full width */
+/* Flerpsy's row: on phones the close-up runs full width under the other two */
 .gallery-sub { margin: 2.25rem 0 0.9rem; }
-.gallery.gallery-dog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (min-width: 720px) {
-  .gallery.gallery-dog { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .gallery.gallery-dog img { height: calc((100cqw - 2 * var(--gap)) * 4 / 9); }
-}
 @media (max-width: 719px) {
   .gallery-dog figure.dog-wide { grid-column: 1 / -1; order: 3; }
   .gallery-dog figure.dog-wide img { height: auto; aspect-ratio: 3 / 2; }
