@@ -339,9 +339,9 @@ mark.todo {
 .gallery {
   display: grid;
   gap: 0.9rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-@media (max-width: 719px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .gallery figure { margin: 0; min-width: 0; }
 .gallery figure.wide { grid-column: 1 / -1; }
 .gallery a { display: block; border-radius: var(--radius); overflow: hidden; background: var(--surface); }
@@ -356,6 +356,9 @@ mark.todo {
   .gallery figure.wide img { aspect-ratio: 4 / 3; }
 }
 .gallery a:hover img { transform: scale(1.015); }
+/* punchline hidden in plain sight: same colour as the page, readable once selected */
+.spoiler { color: var(--bg); }
+.spoiler::selection { color: var(--bg); background: var(--ink); }
 .gallery figcaption {
   font-family: var(--mono);
   font-size: 0.75rem;
