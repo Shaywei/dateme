@@ -405,8 +405,9 @@ mark.todo {
   font-weight: 600;
   margin: 0.25rem 0 0.9rem;
 }
-.you-list { font-size: 1.02em; gap: 0.65rem; max-width: 42ch; }
-.looking .section-title { margin-bottom: 2rem; }
+.you-list { font-size: 1.05em; gap: 0.75rem; max-width: 52ch; }
+.looking .section-title { margin-bottom: 1rem; }
+.looking .lede { max-width: 30ch; }
 
 /* ---------- homework ---------- */
 .homework {
