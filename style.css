@@ -370,7 +370,7 @@ mark.todo {
   line-height: 1.4;
 }
 /* Flerpsy's row: on phones the close-up runs full width under the other two */
-.gallery-sub { margin: 2.25rem 0 0.9rem; }
+h3.sub-title.gallery-sub { margin: 2.75rem 0 0.9rem; }   /* beats .sub-title, which is defined later */
 @media (max-width: 719px) {
   .gallery-dog figure.dog-wide { grid-column: 1 / -1; order: 3; }
   .gallery-dog figure.dog-wide img { height: auto; aspect-ratio: 3 / 2; }
@@ -519,3 +519,23 @@ mark.todo {
 }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
 .site-footer a { color: inherit; }
+
+/* ---------- Draft B overrides (final) ---------- */
+@media (max-width: 479px) { .site-header { position: static; } }
+.gallery figcaption { font-size: 0.85rem; }
+.spec { border-width: 1.5px; }
+.spec h3 { border-bottom-width: 4px; }
+.about-layout { display: grid; gap: 2.5rem; }
+@media (min-width: 1000px) {
+  .about-layout { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: start; }
+}
+.about-layout .about-grid { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .about-layout .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* answers pack into columns so a short one doesn't leave a hole beside a long one */
+@media (min-width: 820px) {
+  .qa { display: block; columns: 2; column-gap: 3rem; }
+  .qa article { break-inside: avoid; margin-bottom: 2.25rem; }
+}
+.spoiler { border-bottom: 1px dotted var(--muted); cursor: pointer; }
+.spoiler.revealed { color: inherit; }
+.contact .cta-row .email-text { flex-basis: 100%; }
