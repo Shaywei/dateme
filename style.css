@@ -356,6 +356,15 @@ mark.todo {
   .gallery figure.wide img { aspect-ratio: 4 / 3; }
 }
 .gallery a:hover img { transform: scale(1.015); }
+/* Flerpsy's row: three equal tiles on wide screens; on phones two up top and the close-up full width */
+.gallery-sub { margin: 2.25rem 0 0.9rem; }
+.gallery.gallery-dog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 720px) { .gallery.gallery-dog { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 719px) {
+  .gallery-dog figure.dog-wide { grid-column: 1 / -1; order: 3; }
+  .gallery-dog figure.dog-wide img { aspect-ratio: 3 / 2; }
+}
+.gallery img.focus-right { object-position: 58% 50%; }
 /* punchline hidden in plain sight: same colour as the page, readable once selected */
 .spoiler { color: var(--bg); }
 .spoiler::selection { color: var(--bg); background: var(--ink); }
