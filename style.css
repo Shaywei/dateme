@@ -385,15 +385,6 @@ mark.todo {
 @media (min-width: 900px) {
   .looking { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
 }
-.pull {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin: 0 0 1rem;
-}
-.pull .name { color: var(--accent-ink); }
 .verse {
   list-style: none;
   margin: 0;
@@ -408,15 +399,6 @@ mark.todo {
   text-indent: -1.4rem;
 }
 .verse li::before { content: "—"; color: var(--accent); margin-right: 0.55rem; }
-.logistics {
-  margin-top: 1.75rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--muted);
-  max-width: var(--measure);
-}
 
 /* ---------- homework ---------- */
 .homework {
@@ -464,29 +446,20 @@ mark.todo {
 }
 .hw:hover .play::before { transform: scale(1.06); }
 .hw-book {
-  display: grid;
-  place-items: center;
-  padding: 6%;
   background: var(--sun);
-  color: #16211a;
 }
-.hw-book .cover {
-  width: 28%;
-  aspect-ratio: 2 / 3;
-  background: #16211a;
-  color: #f6f8f3;
+/* absolutely positioned so the percentage height resolves against the tile, whatever the row sizing */
+.hw-media.hw-book img {
+  position: absolute;
+  top: 7%; bottom: 7%; left: 0; right: 0;
+  height: 86%;
+  width: auto;
+  max-width: 86%;
+  margin: auto;
+  object-fit: contain;
   border-radius: 2px;
-  padding: 0.6rem 0.55rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: var(--display);
-  font-size: clamp(0.7rem, 1.1vw, 0.85rem);
-  line-height: 1.15;
   box-shadow: 4px 4px 0 rgba(22, 33, 26, 0.25);
 }
-.hw-book .cover strong { font-size: 1.35em; letter-spacing: -0.01em; }
-.hw-book .cover span { opacity: 0.8; }
 .hw h3 { font-size: 1.15rem; margin-bottom: 0.25rem; }
 .hw .by { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
 .hw .why { margin-top: 0.5rem; font-size: 0.95em; }
