@@ -550,9 +550,4 @@ h3.sub-title.gallery-sub { margin: 2.75rem 0 0.9rem; }   /* beats .sub-title, wh
 /* "Picture this": a short invitation between the opening and "Six things about me" */
 .section.picture { padding-block: clamp(2.5rem, 5vw, 4rem); }
 .picture .section-title { margin-bottom: 0.9rem; }
-.picture-text {
-  font-size: clamp(1.25rem, 2.6vw, 1.65rem);
-  line-height: 1.4;
-  max-width: 36ch;
-  text-wrap: pretty;
-}
+.picture-text { max-width: 34ch; text-wrap: pretty; }   /* same size as the opening line (.lede) */
