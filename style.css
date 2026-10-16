@@ -539,3 +539,10 @@ h3.sub-title.gallery-sub { margin: 2.75rem 0 0.9rem; }   /* beats .sub-title, wh
 .spoiler { border-bottom: 1px dotted var(--muted); cursor: pointer; }
 .spoiler.revealed { color: inherit; }
 .contact .cta-row .email-text { flex-basis: 100%; }
+
+/* "Six things about me": flow the cards down two columns so each paragraph sits the same distance
+   below the one above it, instead of grid rows that leave a gap under the shorter card of a pair */
+@media (min-width: 720px) {
+  .about-layout .about-grid { display: block; columns: 2; column-gap: 3rem; }
+  .about-layout .about-grid article { break-inside: avoid; margin-bottom: 2rem; }
+}
