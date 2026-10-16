@@ -547,7 +547,14 @@ h3.sub-title.gallery-sub { margin: 2.75rem 0 0.9rem; }   /* beats .sub-title, wh
   .about-layout .about-grid article { break-inside: avoid; margin-bottom: 2rem; }
 }
 
-/* "Picture this": a short invitation between the opening and "Six things about me" */
-.section.picture { padding-block: clamp(2.5rem, 5vw, 4rem); }
+/* "Picture this" sits in the opening's text column. On wide screens that column spans the photo:
+   greeting at the top, "Picture this" ending level with the bottom of the photo (above its caption). */
+.hero-text { display: flex; flex-direction: column; gap: 2.5rem; min-width: 0; }
+.hero-intro .facts { margin-bottom: 0; }
+.hero .picture-text { margin-bottom: 0; }
 .picture .section-title { margin-bottom: 0.9rem; }
+@media (min-width: 820px) {
+  .hero { align-items: stretch; }
+  .hero-text { justify-content: space-between; padding-bottom: 1.8rem; }
+}
 .picture-text { max-width: 34ch; text-wrap: pretty; }   /* same size as the opening line (.lede) */
