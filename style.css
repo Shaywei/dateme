@@ -555,6 +555,9 @@ h3.sub-title.gallery-sub { margin: 2.75rem 0 0.9rem; }   /* beats .sub-title, wh
 .picture .section-title { margin-bottom: 0.9rem; }
 @media (min-width: 820px) {
   .hero { align-items: stretch; }
-  .hero-text { justify-content: space-between; padding-bottom: 1.8rem; }
+  .hero-text { padding-bottom: 1.8rem; }
+  /* split the spare height evenly: half above "Imagine having…", half below it */
+  .hero-intro { flex: 1 0 auto; }
+  .hero-text::after { content: ""; flex: 1 0 0; }
 }
 .picture-text { max-width: 34ch; text-wrap: pretty; }   /* same size as the opening line (.lede) */
